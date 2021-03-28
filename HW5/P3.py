@@ -21,10 +21,25 @@ P3 should return below list.
 ['beryllium 4 9.012', 'magnesium 12 24.305', 'calcium 20 20.078 ', 'strontium 38 87.62', 'barium 56 137.327', 'radium 88 226']
 
 """
-
-def P3(filename: str) -> list:        
-    ##### Write your Code Here #####    
-
-    return list()
-    ##### End of your code #####
-
+def P3(filename: str) -> list:
+    L1 = []
+    L2 = []
+    L3 = []
+    with open(filename, 'r') as lines:
+        for line in lines:
+            if line[0] == '/' and line[1] == '/' :
+                continue
+            elif line[0] == '#':
+                continue
+            else:
+                L1.append(line)
+    for lines in L1:
+        if '#'not in lines:
+            L2.append(lines)
+        elif '#' in lines:
+            a = lines.find('#')
+            L2.append(lines[:a])
+    for lines in L2:
+        a = lines.strip()
+        L3.append(a)
+    return list(L3)

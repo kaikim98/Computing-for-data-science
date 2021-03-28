@@ -37,10 +37,22 @@ barium 56 137.327
 radium 88 226
 
 """
-
-def P5(input_filename: str, out_filename: str):        
-    ##### Write your Code Here ##### 
-
-
-    ##### End of your code #####
-    
+def P5(input_filename: str, out_filename: str):
+    L1 = []
+    with open(input_filename, 'r') as file:
+        with open(out_filename, 'w') as out:
+            for line in file:
+                if line[0] == '/' and line[1] == '/' :
+                    continue               
+                if '#' in line[0]:
+                    b = line.replace('#', '')
+                    L1.append(b)
+                    continue
+                if '#' in line[1:]:
+                    a = line.replace('#', '\n')
+                    L1.append(a)
+                    continue
+                else:
+                    L1.append(line)
+            for line in L1:
+                out.write(line)

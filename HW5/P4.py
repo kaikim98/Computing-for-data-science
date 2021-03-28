@@ -23,9 +23,9 @@ strontium,38,87.62
 barium,56,137.327
 radium,88,226
 """
-
 def P4(input_filename: str, out_filename: str):        
-    ##### Write your Code Here #####    
-
-    ##### End of your code #####
-    
+    with open(input_filename, 'r') as file:
+        with open(out_filename, 'w') as out:
+            for line in file:
+                result = line.replace(' ', ',')
+                out.write(result)
