@@ -21,15 +21,18 @@ False
 """
 def P2(n:int) -> bool:
     count = 0
-    for i in range(2, n/2 +1):
+    L1 =[]
+    for i in range(2, int(n/2 +1)):
         count += 1
         if n % i != 0:
             continue
         if n % i == 0:
             a = n / i
+            L1.append(a)
             break
-    
-    for j in range(2, a/2 +1):
+    if len(L1) == 0:
+        return False
+    for j in range(2, int(a/2 +1)):
         if a % j != 0:
             continue
         if a % j == 0:
