@@ -1,12 +1,13 @@
-"""
-**Instruction**
-Please see instruction document.
-
-"""
 def P2(parentheses: str) -> bool:        
-    ##### Write your Code Here #####
+    a = parentheses.strip("'")
+    count_1 = 0
+    count_2 = 0
+    count_3 = 0
+    open_ = ['(', '{', '[']
+    close_ = [')', '}', ']']
+    list_1 = []
+    for i in a:
+        if 
+    return a
 
-    return False
-    ##### End of your code #####
-
-
+P2(asdf)

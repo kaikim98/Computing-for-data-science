@@ -1,9 +1,10 @@
 def P2(lst):
     n = len(lst)
     L1 = []
-    while change = 0:
-        change = 0 
+    change = True
+    while change:
         for i in range(n-1):
+            count = 0
             if len(lst[i]) > len(lst[i+1]):
                 a = lst[i]
                 b = lst[i+1]
@@ -16,9 +17,9 @@ def P2(lst):
                     b = lst[i]
                     lst[i] = b
                     lst[i+1] = a
+                    count += 1
                     break
                 
-    
     return 
 
 
