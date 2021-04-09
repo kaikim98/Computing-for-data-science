@@ -4,6 +4,6 @@ Please see instruction document.
 
 """
 def P1(path: str) -> str:        
-    ##### Write your Code Here #####
-
-    return ''
+    L1 = '/'
+    
+    return L1

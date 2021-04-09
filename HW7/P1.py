@@ -9,10 +9,7 @@ def P1(lst):
             for i in range(n-1):
                 if lst[i] > lst[i+1]:
                     count += 1
-                    a = lst[i]
-                    b = lst[i+1]
-                    lst[i] = b
-                    lst[i+1] = a
+                    lst[i], lst[i+1] = lst[i+1], lst[i]
                     break
                 elif lst[i] < lst[i+1]:
                     continue
