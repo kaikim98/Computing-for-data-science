@@ -1,13 +1,24 @@
 def P3(A, B):
-    a = len(A)
-    L1 = []
-    for i in range(1, a+1):
-        for j in range(a-i+1):
-            if A[j:j+i].count(1) == B[j:j+i].count(1):
-                L1.append(i)
-            else:
-                continue
-    if len(L1) == 0:
-        return 0
-    m = max(L1)
-    return m
+    a = sum(A)
+    b = sum(B)
+    x = len(A)
+    if a == b:
+        return x
+    change = True
+    while change:
+        if sum(A)>sum(B) and A[0]<B[0]:
+            del A[-1]
+            del B[-1]
+        elif sum(A)>sum(B) and A[0]>=B[0]:
+            del A[0]
+            del B[0]
+        elif sum(A)<sum(B) and A[0]<=B[0]:
+            del A[0]
+            del B[0]
+        elif sum(A)<sum(B) and A[0]>B[0]:
+            del A[-1]
+            del B[-1]
+        elif sum(A) == sum(B):
+            change = False
+    y = len(A)
+    return y
