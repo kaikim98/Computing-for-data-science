@@ -1,23 +1,21 @@
-#import os
-#os.chdir('C:\\Users\\user\Desktop\김동현\수업\데사컴\Computing-for-data-science\Proj4_dist')
-
 from BST_Helper import *
 def P1(root: TreeNode, low: int, high: int) -> int:     
     add = 0
-    if root == None:
-        return 0
     q = [root]
-    change = True
-    while change:
-        a = q.pop(0)
-        if len(q) != 0:
-            if low < a.left.val < high:
-                add = add+ a.left.val
-                print(a.left.val)
-        elif len(q) == 0:
-            change = False
+    if q == None:
+        return []
+    while q:
+        curNode = q.pop()
+        if low <= curNode.val <= high:
+            add = add + curNode.val
+            if curNode.right != None:
+                q.append(curNode.right)
+            if curNode.left != None:
+                q.append(curNode.left)
+        elif curNode.val < low:
+            if curNode.right != None:
+                q.append(curNode.right)
+        elif curNode.val > high:
+            if curNode.left != None:
+                q.append(curNode.left)
     return add
-
-
-root = create_linked_bst([10,5,15,3,7, 9, 18])
-P1(root, 3, 9)
