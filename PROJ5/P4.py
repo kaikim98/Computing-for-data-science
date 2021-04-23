@@ -17,17 +17,11 @@ def P4(L, T):
                 # if T - L > L :
                 a = T - L
                 if a % 2 == 1:
-                    count = count + int(a/2) +1
+                    count = count + int(a/4) +1
                     print('x')
                     change = False
                 else:
-                    count = count + a/2
+                    count = count + int(a/4)
                     print('y')
                     change = False
-                # elif T - L < L:
-                #     count = count + T- L
-                #     print('y')
-                #     change = False
     return count      
-P4(5, 17)
-P4(123, 12345)
